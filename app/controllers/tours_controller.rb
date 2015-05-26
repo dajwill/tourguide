@@ -26,7 +26,7 @@ class ToursController < ApplicationController
     respond_to do |format|
       if @tour.save
         format.html { redirect_to @tour, notice: 'Tour was successfully created.' }
-        format.json { render :show, status: :created, location: @tour }
+        format.json { render :show, status: :created, address: @tour }
       else
         format.html { render :new }
         format.json { render json: @tour.errors, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class ToursController < ApplicationController
     respond_to do |format|
       if @tour.update(tour_params)
         format.html { redirect_to @tour, notice: 'Tour was successfully updated.' }
-        format.json { render :show, status: :ok, location: @tour }
+        format.json { render :show, status: :ok, address: @tour }
       else
         format.html { render :edit }
         format.json { render json: @tour.errors, status: :unprocessable_entity }
@@ -68,6 +68,6 @@ class ToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:name, :location)
+      params.require(:tour).permit(:name, :address)
     end
 end

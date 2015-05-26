@@ -22,7 +22,7 @@
     <% @tours.each do |tour| %>
       <tr>
         <td><%= tour.name %></td>
-        <td><%= tour.location %></td>
+        <td><%= tour.address %></td>
         <td><%= tour.user.name %></td>
         <td><%= link_to 'Show', tour %></td>
         <td><%= link_to 'Edit', edit_tour_path(tour) %></td>

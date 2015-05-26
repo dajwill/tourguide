@@ -1,1 +1,1 @@
-json.extract! @tour, :id, :name, :location, :created_at, :updated_at
+json.extract! @tour, :id, :name, :address, :created_at, :updated_at
